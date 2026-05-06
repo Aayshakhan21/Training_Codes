@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee dashboard</title>
+
+  <style>
+    body {
+      font-family: Arial;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background: #eee;
+    }
+
+    button {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Employee Management System</h2>
+
+  <!-- form -->
+  <input type="hidden" id="empId">
+
+  <input type="text" id="name" placeholder="name">
+  <input type="email" id="email" placeholder="email">
+
+  <button onclick="save()">save</button>
+
+  <!-- table -->
+  <table>
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>email</th>
+        <th>actions</th>
+      </tr>
+    </thead>
+
+    <tbody id="employeeContainer"></tbody>
+  </table>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+/* CSS SELECTORS */
+
+/* Element selector */
+a {
+  color: white;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+/* Hover selector */
+a:hover {
+  text-decoration: underline;
+}
+
+/* Child selector */
+.navbar > div {
+  display: flex;
+}
+
+/* Attribute selector */
+button[class="btn"] {
+  font-weight: bold;
+}

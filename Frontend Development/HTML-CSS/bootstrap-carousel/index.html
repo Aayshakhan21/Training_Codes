@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Carousal Practice</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Box -->
+    <div class="box">
+        One Box is created
+    </div>
+
+    <!-- Flexbox -->
+    <div class="container-custom">
+        <div>Logo</div>
+        <div>Menu</div>
+        <div>Profile</div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="container-btn">
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-info">Info</button>
+    </div>
+
+    <!-- Carousel (Bootstrap 5 FIXED) -->
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://plus.unsplash.com/premium_photo-1672115680958-54438df0ab82?q=80&w=1484&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    class="d-block w-100 carousel-img" alt="img1">
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b" class="d-block w-100 carousel-img"
+                    alt="img2">
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+                    class="d-block w-100 carousel-img" alt="img3">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+
+    </div>
+
+    <!-- Cards -->
+    <div class="container-btn">
+        <div class="card-custom">Card 1</div>
+        <div class="card-custom">Card 2</div>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid">
+        <div class="box1">1 Box</div>
+        <div class="box1">2 Box</div>
+        <div class="box1">3 Box</div>
+    </div>
+
+    <!-- Responsive -->
+    <div class="box2">
+        Resize screen to see effect
+    </div>
+
+    <!-- Bootstrap 5 JS (NO jQuery needed) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
