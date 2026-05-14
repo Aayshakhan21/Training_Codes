@@ -1,0 +1,5 @@
+package com.wipro.SpringExample1;
+
+public class AppConfig {
+
+}
