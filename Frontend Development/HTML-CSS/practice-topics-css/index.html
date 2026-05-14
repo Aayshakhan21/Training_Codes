@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Practice</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/advanced.css">
+</head>
+
+<body>
+
+    <!-- BOX MODEL EXPLANATION -->
+    <!-- Every element is a box: content + padding + border + margin.
+         box-sizing: border-box makes width include padding and border. -->
+
+    <!-- Navbar (Flex + Position) -->
+    <!-- Flexbox is used for 1D layout (row/column alignment).
+         position: sticky keeps navbar fixed at top during scroll. -->
+    <div class="navbar flex-between">
+        <h2>Vishal Shah</h2>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <!-- Utility classes like text-center and mt-10 help reuse styles.
+         Components like buttons are reusable UI elements. -->
+    <div class="container text-center mt-10">
+        <h1>Welcome</h1>
+        <p>Learning CSS step by step</p>
+        <button class="btn">Get Started</button>
+    </div>
+
+    <!-- Flexbox Section -->
+    <!-- Flexbox aligns items in a single direction (row/column).
+         justify-content controls horizontal, align-items controls vertical. -->
+    <div class="flex-container mt-10">
+        <div class="card shadow fade-in">Card 1</div>
+        <div class="card shadow fade-in">Card 2</div>
+        <div class="card shadow fade-in">Card 3</div>
+    </div>
+
+    <!-- Grid Section -->
+    <!-- Grid is used for 2D layouts (rows + columns).
+         grid-template-columns defines column structure. -->
+    <div class="grid mt-10">
+        <div class="card">Grid 1</div>
+        <div class="card">Grid 2</div>
+        <div class="card">Grid 3</div>
+    </div>
+
+    <!-- Media Query Section -->
+    <!-- Media queries make design responsive.
+         Layout changes based on screen size (e.g., mobile view). -->
+    <div class="mt-10 text-center">
+        <p>Resize screen to see responsive behavior</p>
+    </div>
+
+    <!-- Animation Section -->
+    <!-- Animations use @keyframes to define motion.
+         animation property applies smooth transitions. -->
+    <div class="flex-container mt-10">
+        <div class="card shadow fade-in">Animated Card</div>
+    </div>
+
+    <!-- Image Section -->
+    <!-- object-fit: cover ensures image fills container without distortion.
+         Useful for responsive images and UI design. -->
+    <img src="https://plus.unsplash.com/premium_photo-1672115680958-54438df0ab82?q=80&w=1484&auto=format&fit=crop"
+        class="img-cover mt-10">
+
+    <!-- CSS SELECTORS EXPLANATION -->
+    <!-- Element (p), class (.btn), id (#title), pseudo (:hover) selectors
+         are used to target elements and apply styles. -->
+
+</body>
+
+</html>

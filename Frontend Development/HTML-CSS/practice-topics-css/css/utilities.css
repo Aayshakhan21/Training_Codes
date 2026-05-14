@@ -1,0 +1,16 @@
+.text-center {
+  text-align: center;
+}
+
+.mt-10 {
+  margin-top: 40px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.shadow {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}

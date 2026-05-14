@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Flowers School - Student Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header with School Logo -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">&#127800;</span>
+            <span class="logo-text">Spring Flowers School</span>
+        </div>
+    </header>
+
+    <!-- Navigation Menu Bar -->
+    <nav class="menu-bar">
+        <ul class="menu-list">
+            <li><a href="#" class="menu-link active" onclick="showSection('welcome')">Home</a></li>
+            <li><a href="#" class="menu-link" onclick="showSection('profile')">Student Profile</a></li>
+            <li><a href="#" class="menu-link" onclick="showSection('academics')">Academics</a></li>
+            <li><a href="#" class="menu-link" onclick="showSection('contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Welcome Section -->
+    <section class="welcome-section" id="welcomeSection">
+        <h1>Welcome to Spring Flowers School</h1>
+        <p>Your journey towards knowledge and growth starts here. Click on
+            <strong>Student Profile</strong> to view your details.
+        </p>
+    </section>
+
+    <!-- Student Profile Section (hidden by default) -->
+    <section class="profile-section" id="profileSection">
+        <div class="profile-card">
+            <div class="student-image">
+                <img src="student-photo.jpg" alt="Student Photo">
+            </div>
+            <div class="student-info">
+                <h2>Student Information</h2>
+                <table class="info-table">
+                    <tr>
+                        <th>Name</th>
+                        <td>Vishal Shah</td>
+                    </tr>
+                    <tr>
+                        <th>Roll No</th>
+                        <td>1024</td>
+                    </tr>
+                    <tr>
+                        <th>Class</th>
+                        <td>10th - Section A</td>
+                    </tr>
+                    <tr>
+                        <th>Date of Birth</th>
+                        <td>15 March 2010</td>
+                    </tr>
+                    <tr>
+                        <th>Father's Name</th>
+                        <td>Mr. Rajesh Shah</td>
+                    </tr>
+                    <tr>
+                        <th>Mother's Name</th>
+                        <td>Mrs. Sunita Shah</td>
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <td>271B, Ghaziabad, Uttar Pradesh - 201005</td>
+                    </tr>
+                    <tr>
+                        <th>Phone</th>
+                        <td>+91 8178935816</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>vishal@springflowers.edu.in</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academics Section (hidden by default) -->
+    <section class="academics-section" id="academicsSection">
+        <div class="section-card">
+            <h2>Academics</h2>
+            <h3>Subjects & Marks (Last Examination)</h3>
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Marks Obtained</th>
+                        <th>Total Marks</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mathematics</td>
+                        <td>88</td>
+                        <td>100</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>Science</td>
+                        <td>92</td>
+                        <td>100</td>
+                        <td>A+</td>
+                    </tr>
+                    <tr>
+                        <td>English</td>
+                        <td>85</td>
+                        <td>100</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>Hindi</td>
+                        <td>78</td>
+                        <td>100</td>
+                        <td>B+</td>
+                    </tr>
+                    <tr>
+                        <td>Social Studies</td>
+                        <td>82</td>
+                        <td>100</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>Computer</td>
+                        <td>95</td>
+                        <td>100</td>
+                        <td>A+</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="total-text"><strong>Total:</strong> 520 / 600 &nbsp; | &nbsp; <strong>Percentage:</strong> 86.67% &nbsp; | &nbsp; <strong>Result:</strong> Pass</p>
+        </div>
+    </section>
+
+    <!-- Contact Section (hidden by default) -->
+    <section class="contact-section" id="contactSection">
+        <div class="section-card">
+            <h2>Contact Us</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>School Address</h3>
+                    <p><strong>Address:</strong> 271B, Ghaziabad, Uttar Pradesh - 201005</p>
+                    <p><strong>Phone:</strong> +91 8178935816</p>
+                    <p><strong>Email:</strong> info@springflowersschool.edu.in</p>
+                    <p><strong>Office Hours:</strong> Mon - Fri, 8:00 AM to 4:00 PM</p>
+                </div>
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="nameInput">Full Name</label>
+                            <input type="text" id="nameInput" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="emailInput">Email</label>
+                            <input type="email" id="emailInput" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="messageInput">Message</label>
+                            <textarea id="messageInput" rows="4" placeholder="Write your message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Spring Flowers School. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(section) {
+            // Hide all sections
+            document.getElementById("welcomeSection").style.display = "none";
+            document.getElementById("profileSection").style.display = "none";
+            document.getElementById("academicsSection").style.display = "none";
+            document.getElementById("contactSection").style.display = "none";
+
+            // Show selected section
+            if (section === "welcome") {
+                document.getElementById("welcomeSection").style.display = "block";
+            } else if (section === "profile") {
+                document.getElementById("profileSection").style.display = "block";
+            } else if (section === "academics") {
+                document.getElementById("academicsSection").style.display = "block";
+            } else if (section === "contact") {
+                document.getElementById("contactSection").style.display = "block";
+            }
+
+            // Update active menu link
+            var links = document.querySelectorAll(".menu-link");
+            for (var i = 0; i < links.length; i++) {
+                links[i].classList.remove("active");
+            }
+            event.target.classList.add("active");
+        }
+    </script>
+
+</body>
+
+</html>

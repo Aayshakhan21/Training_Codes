@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Flowers School - Student Portal</title>
+    <meta name="description"
+        content="Spring Flowers School student management portal for viewing timetable and school information.">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">🌸 Spring Flowers School</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#timetable">TimeTable</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <header id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome to Spring Flowers School</h1>
+                <p class="lead">Your journey towards knowledge and growth starts here.</p>
+                <a href="#timetable" class="btn btn-primary btn-lg">View TimeTable</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Our School</h2>
+            <div class="about-cards">
+                <div class="about-card">
+                    <h3>Our Mission</h3>
+                    <p>Spring Flowers School is dedicated to providing quality education that nurtures every student's
+                        potential. We believe in creating a learning environment where students can thrive academically
+                        and personally.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Our Vision</h3>
+                    <p>To be a leading educational institution that inspires students to become responsible citizens,
+                        critical thinkers, and lifelong learners who contribute positively to society.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Our Values</h3>
+                    <p>We uphold integrity, discipline, respect, and excellence in everything we do. Our faculty is
+                        committed to guiding students with care and dedication.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TimeTable Section -->
+    <section id="timetable" class="timetable-section">
+        <div class="container">
+            <h2 class="section-title">Class TimeTable</h2>
+            <p class="section-subtitle">Weekly schedule for Class 10 - Section A</p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Monday</th>
+                            <th scope="col">Tuesday</th>
+                            <th scope="col">Wednesday</th>
+                            <th scope="col">Thursday</th>
+                            <th scope="col">Friday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="time-cell">09:00 - 09:45</td>
+                            <td>Mathematics</td>
+                            <td>English</td>
+                            <td>Science</td>
+                            <td>Mathematics</td>
+                            <td>Hindi</td>
+                        </tr>
+                        <tr>
+                            <td class="time-cell">09:45 - 10:30</td>
+                            <td>English</td>
+                            <td>Science</td>
+                            <td>Mathematics</td>
+                            <td>Hindi</td>
+                            <td>Social Studies</td>
+                        </tr>
+                        <tr>
+                            <td class="time-cell">10:30 - 11:15</td>
+                            <td>Science</td>
+                            <td>Hindi</td>
+                            <td>English</td>
+                            <td>Social Studies</td>
+                            <td>Mathematics</td>
+                        </tr>
+                        <tr class="table-warning">
+                            <td class="time-cell" colspan="6"><strong>11:15 - 11:30 &mdash; Short Break</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="time-cell">11:30 - 12:15</td>
+                            <td>Social Studies</td>
+                            <td>Mathematics</td>
+                            <td>Hindi</td>
+                            <td>English</td>
+                            <td>Science</td>
+                        </tr>
+                        <tr>
+                            <td class="time-cell">12:15 - 01:00</td>
+                            <td>Hindi</td>
+                            <td>Social Studies</td>
+                            <td>Computer</td>
+                            <td>Science</td>
+                            <td>English</td>
+                        </tr>
+                        <tr class="table-warning">
+                            <td class="time-cell" colspan="6"><strong>01:00 - 01:45 &mdash; Lunch Break</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="time-cell">01:45 - 02:30</td>
+                            <td>Computer</td>
+                            <td>Physical Ed.</td>
+                            <td>Art</td>
+                            <td>Computer</td>
+                            <td>Physical Ed.</td>
+                        </tr>
+                        <tr>
+                            <td class="time-cell">02:30 - 03:15</td>
+                            <td>Physical Ed.</td>
+                            <td>Art</td>
+                            <td>Physical Ed.</td>
+                            <td>Art</td>
+                            <td>Computer</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p><strong>Address:</strong> 271B, Ghaziabad, Uttar Pradesh - 201005</p>
+                    <p><strong>Phone:</strong> +91 8178935816</p>
+                    <p><strong>Email:</strong> info@springflowersschool.edu.in</p>
+                    <p><strong>Office Hours:</strong> Mon - Fri, 8:00 AM to 4:00 PM</p>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nameInput" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="nameInput" placeholder="Enter your name"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="emailInput" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="Enter your email"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="messageInput" class="form-label">Message</label>
+                            <textarea class="form-control" id="messageInput" rows="4"
+                                placeholder="Write your message here" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <p>&copy; 2026 Spring Flowers School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
