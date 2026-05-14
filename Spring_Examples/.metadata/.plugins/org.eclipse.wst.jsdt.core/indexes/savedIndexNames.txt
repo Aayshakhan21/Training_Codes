@@ -1,5 +1,0 @@
-INDEX VERSION 1.4+C:\Users\sk223\Wipro_preskilling\Spring_Examples\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-2958700407.index
-1526792998.index
-3502721960.index
-1986598823.index
