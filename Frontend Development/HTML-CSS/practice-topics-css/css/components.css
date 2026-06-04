@@ -1,0 +1,23 @@
+/* BUTTON */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  background: blue;
+  color: white;
+  cursor: pointer;
+}
+
+/* CARD */
+.card {
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* IMAGE */
+.img-cover {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}

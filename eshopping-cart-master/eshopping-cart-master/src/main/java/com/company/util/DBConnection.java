@@ -1,0 +1,10 @@
+package com.company.util;
+
+import java.sql.Connection;
+
+public class DBConnection {
+
+    public static Connection getConnection() {
+        return DBConnectionUtil.getConnection();
+    }
+}

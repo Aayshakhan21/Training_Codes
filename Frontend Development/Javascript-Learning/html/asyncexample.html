@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promise + setTimeout + Fetch</title>
+</head>
+<body>
+
+<h2>Users Data</h2>
+<ul id="users"></ul>
+
+<script>
+
+/*
+========================================
+🔹 THEORY: What is happening in this code?
+========================================
+
+1. fetch() → used to call API (returns a Promise)
+2. Promise → handles async result (success/failure)
+3. setTimeout() → delays execution (simulates real API delay)
+4. DOM manipulation → display data on UI
+5. JavaScript is non-blocking → other code runs while waiting
+
+========================================
+*/
+
+
+// 🔹 Step 1: Show non-blocking behavior
+console.log("Fetching data...");
+
+for (let i = 0; i <= 3; i++) {
+  console.log("Doing other work:", i);
+}
+
+
+/*
+========================================
+🔹 Step 2: Create a function to fetch data
+========================================
+
+fetch() returns a Promise
+- If success → resolved
+- If error → rejected
+*/
+
+function fetchUsers() {
+  return fetch("https://jsonplaceholder.typicode.com/users")
+    .then(response => {
+      
+      // check if response is valid
+      if (!response.ok) {
+        throw new Error("Failed to fetch users");
+      }
+
+      // convert JSON string → JavaScript object
+      return response.json();
+    });
+}
+
+
+/*
+========================================
+🔹 Step 3: Add delay using Promise + setTimeout
+========================================
+
+We wrap fetch inside a Promise to:
+- simulate delay (like real API loading)
+- control when resolve/reject happens
+*/
+
+function delayedFetch() {
+  return new Promise((resolve, reject) => {
+
+    setTimeout(() => {
+
+      fetchUsers()
+        .then(data => {
+          resolve(data);   // success → pass data
+        })
+        .catch(error => {
+          reject(error);   // failure → pass error
+        });
+
+    }, 3000); // delay of 3 seconds
+
+  });
+}
+
+
+/*
+========================================
+🔹 Step 4: Use the Promise
+========================================
+
+.then() → handles success
+.catch() → handles error
+*/
+
+delayedFetch()
+  .then(users => {
+
+    // select UL from HTML
+    const ul = document.getElementById("users");
+
+    /*
+    ========================================
+    🔹 Step 5: DOM Manipulation
+    ========================================
+    - create <li> for each user
+    - insert data dynamically
+    */
+
+    users.forEach(user => {
+      const li = document.createElement("li");
+
+      // Interpolation → inserting dynamic values
+      li.textContent = `Name: ${user.name} - Email: ${user.email}`;
+
+      ul.appendChild(li);
+    });
+
+  })
+  .catch(err => {
+
+    console.error("Error:", err);
+
+    // show error on UI
+    const ul = document.getElementById("users");
+    ul.innerHTML = `<li style="color:red;">${err}</li>`;
+  });
+
+
+/*
+========================================
+🔹 FINAL CONCEPT SUMMARY
+========================================
+
+- JavaScript is asynchronous (non-blocking)
+- fetch() → returns Promise
+- setTimeout() → delays execution
+- Promise → handles async result
+- DOM → displays data
+
+========================================
+*/
+
+</script>
+
+</body>
+</html>

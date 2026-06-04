@@ -1,0 +1,62 @@
+/* Box Model */
+.box {
+  border: 6px solid blue;
+  width: 200px;
+  padding: 30px;
+  margin: 40px;
+  background: lightblue;
+}
+
+/* Flexbox */
+.container-custom {
+  display: flex;
+  justify-content: space-between;
+  background: gray;
+  padding: 20px;
+  color: white;
+}
+
+/* Buttons container */
+.container-btn {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+}
+
+/* Cards */
+.card-custom {
+  border: 1px solid coral;
+  padding: 15px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.box1 {
+  background: lightcoral;
+  padding: 20px;
+}
+
+/* Responsive */
+.box2 {
+  background: green;
+  color: white;
+  padding: 20px;
+}
+
+.carousel-img {
+  height: 300px;        /* control size */
+  object-fit: cover;    /* crop nicely */
+}
+
+@media (max-width: 600px) {
+  .box2 {
+    background: orange;
+  }
+}

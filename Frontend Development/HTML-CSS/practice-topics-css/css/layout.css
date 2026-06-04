@@ -1,0 +1,29 @@
+/* FLEXBOX */
+.flex-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* NAVBAR LAYOUT */
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+/* POSITION */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #222;
+  color: white;
+  padding: 15px;
+}

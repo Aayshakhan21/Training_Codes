@@ -1,0 +1,296 @@
+{
+  "info": {
+    "name": "AppVerse AI API",
+    "description": "Complete Postman collection for AppVerse AI backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080/api" },
+    { "key": "accessToken", "value": "" },
+    { "key": "refreshToken", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/auth/register",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"testuser\",\n  \"email\": \"test@example.com\",\n  \"password\": \"Test@123\",\n  \"fullName\": \"Test User\",\n  \"role\": \"USER\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Register Developer",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/auth/register",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"devuser\",\n  \"email\": \"dev@example.com\",\n  \"password\": \"Test@123\",\n  \"fullName\": \"Dev User\",\n  \"role\": \"DEVELOPER\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "event": [{
+            "listen": "test",
+            "script": {
+              "exec": [
+                "const res = pm.response.json();",
+                "if (res.data) {",
+                "  pm.collectionVariables.set('accessToken', res.data.accessToken);",
+                "  pm.collectionVariables.set('refreshToken', res.data.refreshToken);",
+                "}"
+              ]
+            }
+          }],
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/auth/login",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"Test@123\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Refresh Token",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/auth/refresh",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refreshToken\": \"{{refreshToken}}\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "List All Categories",
+          "request": { "method": "GET", "url": "{{baseUrl}}/categories" }
+        },
+        {
+          "name": "Get Category by ID",
+          "request": { "method": "GET", "url": "{{baseUrl}}/categories/1" }
+        }
+      ]
+    },
+    {
+      "name": "Apps",
+      "item": [
+        {
+          "name": "List Apps (paginated)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/apps?page=0&size=12&sortBy=createdAt&direction=desc",
+              "query": [
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "12" },
+                { "key": "sortBy", "value": "createdAt" },
+                { "key": "direction", "value": "desc" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "List Apps by Category",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/apps?categoryId=1&page=0&size=12"
+          }
+        },
+        {
+          "name": "Search Apps",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/apps/search?q=productivity"
+          }
+        },
+        {
+          "name": "Get App by ID",
+          "request": { "method": "GET", "url": "{{baseUrl}}/apps/1" }
+        },
+        {
+          "name": "Trending Apps",
+          "request": { "method": "GET", "url": "{{baseUrl}}/apps/trending?limit=10" }
+        },
+        {
+          "name": "Create App (Developer)",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/apps",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{accessToken}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"My Productivity App\",\n  \"description\": \"A powerful app to boost your productivity with AI assistance\",\n  \"shortDesc\": \"AI-powered productivity tool\",\n  \"categoryId\": 1,\n  \"price\": 0,\n  \"version\": \"1.0.0\",\n  \"releaseNotes\": \"Initial release with core features\",\n  \"tags\": \"[\\\"productivity\\\", \\\"ai\\\"]\",\n  \"sizeMb\": 15.5\n}"
+            }
+          }
+        },
+        {
+          "name": "Update App",
+          "request": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/apps/1",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{accessToken}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": \"1.1.0\",\n  \"releaseNotes\": \"Bug fixes and performance improvements\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Approve App (Admin)",
+          "request": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/apps/1/status",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{accessToken}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"APPROVED\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Record Download",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/apps/1/download",
+            "header": [{ "key": "Authorization", "value": "Bearer {{accessToken}}" }]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reviews",
+      "item": [
+        {
+          "name": "Get Reviews for App",
+          "request": { "method": "GET", "url": "{{baseUrl}}/reviews/app/1?page=0&size=10" }
+        },
+        {
+          "name": "Submit Review",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/reviews/app/1/user/1",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{accessToken}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rating\": 5,\n  \"title\": \"Amazing app!\",\n  \"content\": \"This app is absolutely fantastic! It has helped me boost my productivity by at least 50%. Highly recommend to everyone.\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Submit Negative Review",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/reviews/app/1/user/2",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{accessToken}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rating\": 1,\n  \"title\": \"Terrible experience\",\n  \"content\": \"This app is horrible and keeps crashing. Terrible performance and awful UI. Total waste of time.\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get Flagged Reviews (Admin)",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/reviews/flagged",
+            "header": [{ "key": "Authorization", "value": "Bearer {{accessToken}}" }]
+          }
+        },
+        {
+          "name": "Moderate Review (Admin)",
+          "request": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/reviews/1/moderate?approve=true",
+            "header": [{ "key": "Authorization", "value": "Bearer {{accessToken}}" }]
+          }
+        }
+      ]
+    },
+    {
+      "name": "AI Recommendations",
+      "item": [
+        {
+          "name": "Personalised Recommendations",
+          "request": { "method": "GET", "url": "{{baseUrl}}/recommendations/user/1?limit=10" }
+        },
+        {
+          "name": "Trending Apps",
+          "request": { "method": "GET", "url": "{{baseUrl}}/recommendations/trending?limit=10" }
+        },
+        {
+          "name": "Similar Apps",
+          "request": { "method": "GET", "url": "{{baseUrl}}/recommendations/similar/1?limit=6" }
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "Platform Stats",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/stats",
+            "header": [{ "key": "Authorization", "value": "Bearer {{accessToken}}" }]
+          }
+        },
+        {
+          "name": "List All Users",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/users?page=0&size=20",
+            "header": [{ "key": "Authorization", "value": "Bearer {{accessToken}}" }]
+          }
+        },
+        {
+          "name": "Toggle User Active",
+          "request": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/admin/users/2/toggle",
+            "header": [{ "key": "Authorization", "value": "Bearer {{accessToken}}" }]
+          }
+        },
+        {
+          "name": "Pending Apps",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/apps/pending",
+            "header": [{ "key": "Authorization", "value": "Bearer {{accessToken}}" }]
+          }
+        }
+      ]
+    }
+  ]
+}
